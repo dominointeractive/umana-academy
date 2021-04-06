@@ -1,0 +1,17 @@
+global-styling:
+  css:
+    theme:
+      css/custom.css: {}
+
+particlesjs:
+  js:
+    libs/particles.js/particles.js: {}
+
+global-scripts:
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - academy/particlesjs

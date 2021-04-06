@@ -1,0 +1,37 @@
+#block-academy-site-branding {
+  background: red;
+  border: 2px dotted black;
+}
+
+#block-academy-page-title {
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+  background-color: #b61924;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#block-academy-page-title canvas {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+#block-academy-page-title h1 {
+  z-index: 1;
+  position: relative;
+  color: white;
+}
+
+#node-1 {
+  background: #7cbe8c;
+}
+
+#node-3 {
+  background: yellow;
+}

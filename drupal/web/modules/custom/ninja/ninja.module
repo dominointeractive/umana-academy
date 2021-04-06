@@ -1,0 +1,56 @@
+<?php
+
+function ninja_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'block_form' && isset($form['settings']['fascia_eta'])) {
+    $form['settings']['fascia_eta']['#type'] = 'select';
+    $form['settings']['fascia_eta']['#options'] = [
+      '' => 'Tutte le fasce',
+      '16-19' => '16-19',
+      '20-29' => '20-29',
+      '30-39' => '30-39',
+      '40-49' => '40-49',
+      '50-59' => '50-59',
+      '60-69' => '60-69',
+      '70-79' => '70-79',
+      '80-89' => '80-89',
+      '90+' => '90+',
+    ];
+
+    unset($form['settings']['fascia_eta']['#description']);
+  }
+}
+
+/**
+ * Funzione di utilità che invia un messaggio al nostro canale Telgram privato.
+ *
+ * @param $message
+ */
+function _ninja_telegram_send_message($message) {
+  try {
+    \Drupal::httpClient()->get('https://api.telegram.org/bot1626439356:AAE5ceY9fkP8SgleQYvvhqQYU0VGgrmt5Es/sendMessage?chat_id=-1001362314932&text=' . urlencode($message));
+  }
+  catch (\Exception $e) {
+    \Drupal::messenger()->addError('Ops, non sono riuscito a mandare un messaggio su Telegram :\'(');
+    watchdog_exception('ninja', $e);
+  }
+}
+
+function ninja_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  // $entity->field_tempo_di_lettura = 100;
+}
+
+function ninja_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  // \Drupal::messenger()->addError('Mi piace di più il rosso');
+  // \Drupal::messenger()->addMessage('Damiano ha creato ' . $entity->getEntityTypeId() . ':' . $entity->bundle() .' => "' . $entity->label() . '"');
+  // $url = $entity->toUrl()->setAbsolute(TRUE)->toString();
+  // _ninja_telegram_send_message('Damiano ha creato ' . $url);
+}
+
+function ninja_entity_update(Drupal\Core\Entity\EntityInterface $entity) {
+  // \Drupal::messenger()->addMessage('Bravo, hai aggiornato un contenuto esistente!');
+  // _ninja_telegram_send_message('Damiano ha aggiornato ' . $entity->getEntityTypeId() . ':' . $entity->bundle() .' => "' . $entity->label() . '"');
+}
+
+function ninja_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
+  // _ninja_telegram_send_message('Damiano ha cancellato ' . $entity->getEntityTypeId() . ':' . $entity->bundle() .' => "' . $entity->label() . '"');
+}

@@ -1,0 +1,16 @@
+<?php
+
+function academy_preprocess_page(array &$variables) {
+  $variables['corso'] = FALSE;
+}
+
+function academy_preprocess_node(array &$variables) {
+  $variables['attributes']['prova'] = 'ciao';
+}
+
+function academy_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  // unset($css['core/modules/toolbar/css/toolbar.menu.css']);
+  // unset($css['core/modules/toolbar/css/toolbar.module.css']);
+  // unset($css['core/modules/toolbar/css/toolbar.theme.css']);
+  // unset($css['modules/contrib/admin_toolbar/css/admin.toolbar.css']);
+}

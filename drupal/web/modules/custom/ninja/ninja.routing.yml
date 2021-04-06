@@ -1,0 +1,28 @@
+ninja.example_json:
+  path: '/example-json'
+  defaults:
+    _controller: '\Drupal\ninja\Controller\ExampleController::json'
+  requirements:
+    _access: 'TRUE'
+
+ninja.example_html:
+  path: '/example-html'
+  defaults:
+    _controller: '\Drupal\ninja\Controller\ExampleController::html'
+  requirements:
+    _access: 'TRUE'
+
+ninja.example_form:
+  path: '/example-form'
+  defaults:
+    _form: '\Drupal\ninja\Form\ExampleForm'
+    _title: 'Esempio di route con form abbinato'
+  requirements:
+    _access: 'TRUE'
+
+ninja.telegram_webhook:
+  path: '/telegram-webhook'
+  defaults:
+    _controller: '\Drupal\ninja\Controller\TelegramWebhookController::receive'
+  requirements:
+    _access: 'TRUE'
