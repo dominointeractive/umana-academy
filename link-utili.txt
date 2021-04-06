@@ -1,0 +1,20 @@
+LINK UTILI
+==========
+
+- Installare Drupal con composer
+https://www.drupal.org/node/2718229
+
+- Visual Studio Code + Drupal
+https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code
+
+- Creating sub-themes
+https://www.drupal.org/docs/theming-drupal/creating-sub-themes
+
+- Documentazione twig
+https://twig.symfony.com/doc/2.x/
+
+- Twig e Drupal
+https://www.drupal.org/docs/theming-drupal/twig-in-drupal
+
+- ngrok (espone il proprio sito locale su internet, così che tutte lo possano vedere)
+https://ngrok.com
